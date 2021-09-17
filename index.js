@@ -62,10 +62,11 @@ const zooAnimals = [
   */
 
   function animalNames(array){
-    zooAnimals.forEach(function(x,y){
-      console.log(x.animal_name);
-      console.log(y.scientific_name);
+    let displayNames = [];
+    array.forEach(function(array){
+      displayNames.push(`name: ${array.animal_name}, scientific: ${array.scientific_name}`);
     });
+    return displayNames;
   }
 
   console.log('Topic 2 Request 1:', animalNames(zooAnimals));
@@ -77,14 +78,14 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(array){
-    const lowerCaseAnimalsNames = [];
-    array.map(function(item){
-      lowerCaseAnimalsNames.push(item.animal_names.toLowerCase());
-    });
-  }
+  // function lowerCaseNames(array){
+  //   const lowerCaseAnimalsNames = [];
+  //   array.map(function(item){
+  //     lowerCaseAnimalsNames.push(item.animal_names.toLowerCase());
+  //   });
+  // }
 
-  console.log('Topic 2 Request 2:', lowerCaseNames(zooAnimals));
+  // console.log('Topic 2 Request 2:', lowerCaseNames(zooAnimals));
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -222,7 +223,7 @@ class CuboidMakerTwo{
     foo,
     summation,
     animalNames,
-    lowerCaseNames,
+    // lowerCaseNames,
     lowPopulationAnimals,
     USApop,
     consume, 
