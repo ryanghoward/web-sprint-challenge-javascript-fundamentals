@@ -78,14 +78,14 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  // function lowerCaseNames(array){
-  //   const lowerCaseAnimalsNames = [];
-  //   array.map(function(item){
-  //     lowerCaseAnimalsNames.push(item.animal_names.toLowerCase());
-  //   });
-  // }
+  function lowerCaseNames(array){
+    const animalNamesLowerCase = array.map(function(item){
+      return item.animal_name.toLowerCase();
+    });
+    return animalNamesLowerCase;
+  }
 
-  // console.log('Topic 2 Request 2:', lowerCaseNames(zooAnimals));
+  console.log('Topic 2 Request 2:', lowerCaseNames(zooAnimals));
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -93,9 +93,9 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(array){
   }
+  
   
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
@@ -223,7 +223,7 @@ class CuboidMakerTwo{
     foo,
     summation,
     animalNames,
-    // lowerCaseNames,
+    lowerCaseNames,
     lowPopulationAnimals,
     USApop,
     consume, 
