@@ -128,67 +128,68 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
+  function consume(a, b, cb_function){
+    return (a, b);
   }
  
   
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
  // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
   
-function add(num1, num2){
-    return num1 + num2;
+function add(a, b, cb_function){
+    return a + b, cb_function;
   }
 
-  console.log('Request 4 Step 2 Part 1:',add(10,20));
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
   
-function multiply(num1, num2){
-   return num1 * num2;
+function multiply(a, b, cb_function){
+   return a * b, cb_function;
   }
 
-  console.log('Request 4 Step 2 Part 2:', multiply(10,20));
+ 
 
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
-function greeting(firstName, lastName){
-   return `Hello ${firstName} ${lastName}, nice to meet you!`
+function greeting(a, b, cb_function){
+   return `Hello ${a} ${b}, nice to meet you!`, cb_function;
   }
-
-  console.log('Request 4 Step 2 Part 3:', greeting('George', 'Washington'));
   
   
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-  // console.log(consume(2, 2, add)); // 4
-  // console.log(consume(10, 16, multiply)); // 160
-  // console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+  console.log('Callbacks add:', consume(2, 2, add)); // 4
+  console.log('Callbacks multiply:', consume(10, 16, multiply)); // 160
+  console.log('Callbacks greeting:', consume('Mary', 'Poppins', greeting)); // Hello Mary Poppins, nice to meet you!
 
 // 🐴🐴🐴 Topic 3: Prototypes 🐴🐴🐴 //
 //🐴🐴🐴 Task: You are to build a cuboid maker that can return values for a cuboid's volume or surface area. Cuboids are similar to cubes but do not have even sides. Follow the steps in order to accomplish this challenge. 🐴🐴🐴
 /* 🐴🐴🐴 Step 1: Base Constructor 🐴🐴🐴
  Use the constructor function named CuboidMaker to accept properties for length, width, and height which can be initialized as an object
 */
-function CuboidMaker(/*Your Code Here */){
-  /*Your Code Here */
+function CuboidMaker(length, width, height){
+  this.length = length;
+  this.width = width;
+  this.height = height;
+  this.volume = 0;
 }
-
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
 
-
-
-
+  CuboidMaker.prototype.volume = function(){
+    this.volume = this.length * this.width * this.height;
+  }
 
 /* 🐴🐴🐴 Step 3: Surface Area Method 🐴🐴🐴
   Create another method called surfaceArea using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height. 
   Formula for cuboid surface area of a cube: 
   2 * (length * width + length * height + width * height)  */
 
-
+  CuboidMaker.prototype.surfaceArea = function(){
+    2 * (this.length * this.width + this.length * this.height + this.width * this.height);
+  }
 
 
 
@@ -202,7 +203,7 @@ function CuboidMaker(/*Your Code Here */){
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(cuboid.volume()); // 100
+// console.log(CuboidMaker.volume()); // 100
 // console.log(cuboid.surfaceArea()); // 130
  
 
