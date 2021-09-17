@@ -128,38 +128,40 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(a, b, cb_function){
-    return (a, b);
+  function consume(a, b){
+    return a, b;
   }
  
   
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
  // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
   
-function add(a, b, cb_function){
-    return a + b, cb_function;
+function add(a, b){
+    return a + b
   }
+
+  console.log('Callbacks add:', consume(2, 2, add));
 
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
   
-function multiply(a, b, cb_function){
-   return a * b, cb_function;
+function multiply(a, b){
+   return a * b
   }
 
- 
+  console.log('Callbacks multiply:', consume(10, 16, multiply));
 
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
-function greeting(a, b, cb_function){
-   return `Hello ${a} ${b}, nice to meet you!`, cb_function;
+function greeting(a, b){
+   return `Hello ${a} ${b}, nice to meet you!`;
   }
   
   
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-  console.log('Callbacks add:', consume(2, 2, add)); // 4
-  console.log('Callbacks multiply:', consume(10, 16, multiply)); // 160
+  // console.log('Callbacks add:', consume(2, 2, add)); // 4
+  // console.log('Callbacks multiply:', consume(10, 16, multiply)); // 160
   console.log('Callbacks greeting:', consume('Mary', 'Poppins', greeting)); // Hello Mary Poppins, nice to meet you!
 
 // 🐴🐴🐴 Topic 3: Prototypes 🐴🐴🐴 //
@@ -167,11 +169,11 @@ function greeting(a, b, cb_function){
 /* 🐴🐴🐴 Step 1: Base Constructor 🐴🐴🐴
  Use the constructor function named CuboidMaker to accept properties for length, width, and height which can be initialized as an object
 */
+
 function CuboidMaker(length, width, height){
   this.length = length;
   this.width = width;
   this.height = height;
-  this.volume = 0;
 }
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
@@ -179,7 +181,7 @@ function CuboidMaker(length, width, height){
   Formula for cuboid volume: length * width * height   */
 
   CuboidMaker.prototype.volume = function(){
-    this.volume = this.length * this.width * this.height;
+    this.length * this.width * this.height;
   }
 
 /* 🐴🐴🐴 Step 3: Surface Area Method 🐴🐴🐴
@@ -188,29 +190,30 @@ function CuboidMaker(length, width, height){
   2 * (length * width + length * height + width * height)  */
 
   CuboidMaker.prototype.surfaceArea = function(){
-    2 * (this.length * this.width + this.length * this.height + this.width * this.height);
+    2 * ((this.length * this.width) + (this.length * this.height) + (this.width * this.height));
   }
-
-
 
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
-
-
+   
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(CuboidMaker.volume()); // 100
+// console.log(cuboid.volume()); // 100
 // console.log(cuboid.surfaceArea()); // 130
  
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
-
+  constructor(length, width, height){
+    this.length = length;
+    this.width = width;
+    this.height = height;
+  }
 }
 
 
