@@ -128,8 +128,8 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(a, b){
-    return a, b;
+  function consume(a, b, cb){
+    return cb(a, b);
   }
  
   
@@ -140,16 +140,11 @@ function add(a, b){
     return a + b
   }
 
-  console.log('Callbacks add:', consume(2, 2, add));
-
-
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
   
 function multiply(a, b){
    return a * b
   }
-
-  console.log('Callbacks multiply:', consume(10, 16, multiply));
 
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
@@ -157,11 +152,10 @@ function greeting(a, b){
    return `Hello ${a} ${b}, nice to meet you!`;
   }
   
-  
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-  // console.log('Callbacks add:', consume(2, 2, add)); // 4
-  // console.log('Callbacks multiply:', consume(10, 16, multiply)); // 160
+  console.log('Callbacks add:', consume(2, 2, add)); // 4
+  console.log('Callbacks multiply:', consume(10, 16, multiply)); // 160
   console.log('Callbacks greeting:', consume('Mary', 'Poppins', greeting)); // Hello Mary Poppins, nice to meet you!
 
 // 🐴🐴🐴 Topic 3: Prototypes 🐴🐴🐴 //
