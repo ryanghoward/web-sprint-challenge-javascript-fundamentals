@@ -69,7 +69,7 @@ const zooAnimals = [
     return displayNames;
   }
 
-  console.log('Topic 2 Request 1:', animalNames(zooAnimals));
+  console.log('animalNames Array:', animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -85,7 +85,7 @@ const zooAnimals = [
     return animalNamesLowerCase;
   }
 
-  console.log('Topic 2 Request 2:', lowerCaseNames(zooAnimals));
+  console.log('lowerCaseNames Array:', lowerCaseNames(zooAnimals));
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -94,7 +94,13 @@ const zooAnimals = [
   */
 
   function lowPopulationAnimals(array){
+    const popLow = array.filter(function(item){
+      return item.population < 5;
+    });
+    return popLow;
   }
+
+  console.log('lowPopulationAnimals Array:', lowPopulationAnimals(zooAnimals));
   
   
 
